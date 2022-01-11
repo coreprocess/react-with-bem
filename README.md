@@ -8,7 +8,7 @@ A react library implementing the [BEM](http://getbem.com/) concept for Sass.
 - Provides easy to use style injection
 - Provides easy to use DOM elements prefixed by $
 - Wrapper to integrate your own components
-- Warnings in developer console when class is missing
+- Warning in developer console when class is missing
 
 ## Installation
 
@@ -28,7 +28,7 @@ npm install react-hook-bem
 */
 
 // All DOM elements are prefixed by $
-import { $div, $main Styles } from "react-hook-bem";
+import { $div, $main, Styles } from "react-hook-bem";
 
 // import styles as module
 // https://github.com/css-modules/css-modules
@@ -40,15 +40,15 @@ return (
   // inject styles
   <Styles value={styles}>
     // define a BEM block by using $block
-    // output: class="app"
+    // output: <main class="app">
     <$main $block="app">
       // define a BEM element by using $element
-      // output: class="app__container"
+      // output: <div class="app__container">
       <$div $element="container">
         // use a BEM modifier by using $modifier, multiple modifiers are possible
         // output:
-        // class="app__container__click when  clicked === false
-        // class="app__container__click app__container__click--hidden" when clicked === true
+        // <div class="app__container__click> when  clicked === false
+        // <div class="app__container__click app__container__click--hidden"> when clicked === true
         <$div
             $element="click"
             $modifier={{
@@ -64,6 +64,10 @@ return (
 ```
 
 ```css
+/*
+* App.module.scss
+*/
+
 .app {
   background-color: red;
 
@@ -71,7 +75,7 @@ return (
     margin: 0 auto;
 
     &__click {
-      /*! keep - so scss compiles emmpty class */
+      /*! keep - so scss compiles empty class */
 
       &--hidden {
         display: none;
