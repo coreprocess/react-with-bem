@@ -8,6 +8,7 @@ A react library implementing the [BEM](http://getbem.com/) concept for Sass.
 - Provides easy to use style injection
 - Provides easy to use DOM elements prefixed by $
 - Wrapper to integrate your own components
+- Warnings in developer console when class is missing
 
 ## Installation
 
@@ -15,16 +16,21 @@ A react library implementing the [BEM](http://getbem.com/) concept for Sass.
 yarn add react-hook-bem
 
 #or
+
 npm install react-hook-bem
 ```
 
 ## Basic usage
 
 ```typescript
-// All DOM elements are prefixed by $
-import { $div, Styles } from "react-hook-bem";
+/*
+* Component.tsx
+*/
 
-// import scss module
+// All DOM elements are prefixed by $
+import { $div, $main Styles } from "react-hook-bem";
+
+// import styles as module
 // https://github.com/css-modules/css-modules
 import styles from "./App.module.scss";
 
@@ -34,21 +40,45 @@ return (
   // inject styles
   <Styles value={styles}>
     // define a BEM block by using $block
-    <$div $block="app">
+    // output: class="app"
+    <$main $block="app">
       // define a BEM element by using $element
-      <$div $element="container"></$div>
-      // use a BEM modifier by using $modifier, multiple modifiers are possible
-      <$div
-        $element="click"
-        $modifier={{
-          hidden: clicked,
-        }}
-      >
-        Hello world!
+      // output: class="app__container"
+      <$div $element="container">
+        // use a BEM modifier by using $modifier, multiple modifiers are possible
+        // output:
+        // class="app__container__click when  clicked === false
+        // class="app__container__click app__container__click--hidden" when clicked === true
+        <$div
+            $element="click"
+            $modifier={{
+            hidden: clicked,
+            }}
+        >
+            Hello world!
+        </$div>
       </$div>
-    </$div>
+    </$main>
   </Styles>
 );
+```
+
+```css
+.app {
+  background-color: red;
+
+  &__container {
+    margin: 0 auto;
+
+    &__click {
+      /*! keep - so scss compiles emmpty class */
+
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+}
 ```
 
 ### Advanced usage
