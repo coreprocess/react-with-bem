@@ -1,0 +1,23 @@
+{
+  "name": "react-hook-bem",
+  "version": "1.0.0",
+  "description": "A react library implementing the BEM Sass concept",
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "git@github.com:digitalentities/with-bem.git",
+  "author": "Lukas Kupczyk <kontakt@lukas-kupczyk.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^17.0.9"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
