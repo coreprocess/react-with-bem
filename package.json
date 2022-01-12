@@ -1,7 +1,7 @@
 {
-  "name": "react-hook-bem",
+  "name": "@digitalentities/react-hook-bem",
   "version": "1.0.0",
-  "description": "A react library implementing the BEM Sass concept",
+  "description": "A react library implementing the BEM concept for Sass",
   "scripts": {
     "build": "tsc"
   },
