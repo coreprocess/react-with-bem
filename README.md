@@ -1,6 +1,6 @@
 # react-hook-bem
 
-A react library implementing the [BEM](http://getbem.com/) concept for Sass.
+A React library implementing the [BEM](http://getbem.com/) concept for Sass.
 
 ## Features
 
@@ -13,11 +13,11 @@ A react library implementing the [BEM](http://getbem.com/) concept for Sass.
 ## Installation
 
 ```bash
-yarn add react-hook-bem
+yarn add @digitalentities/react-hook-bem
 
 #or
 
-npm install react-hook-bem
+npm install @digitalentities/react-hook-bem
 ```
 
 ## Basic usage
@@ -28,7 +28,7 @@ npm install react-hook-bem
 */
 
 // All DOM elements are prefixed by $
-import { $div, $main, Styles } from "react-hook-bem";
+import { $div, $main, Styles } from "@digitalentities/react-hook-bem";
 
 // import styles as module
 // https://github.com/css-modules/css-modules

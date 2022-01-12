@@ -1,6 +1,6 @@
 {
   "name": "@digitalentities/react-hook-bem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react library implementing the BEM concept for Sass",
   "scripts": {
     "build": "tsc"
@@ -8,9 +8,22 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "repository": "git@github.com:digitalentities/with-bem.git",
+  "repository": "git@github.com:digitalentities/react-hook-bem.git",
   "author": "Lukas Kupczyk <kontakt@lukas-kupczyk.de>",
   "license": "MIT",
+  "homepage": "https://github.com/digitalentities/react-hook-bem",
+  "keywords": [
+    "react",
+    "sass",
+    "bem",
+    "nextjs",
+    "scss",
+    "css",
+    "bem-methodology",
+    "bem-css",
+    "react-hooks",
+    "hooks"
+  ],
   "devDependencies": {
     "typescript": "^4.5.4",
     "@types/react": "^17.0.20",
