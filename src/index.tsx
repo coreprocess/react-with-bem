@@ -1,7 +1,7 @@
 import { withBEM } from "./core";
 
 // General
-export { withBEM, Styles } from "./core";
+export { Styles, withBEM } from "./core";
 
 // HTML
 export const $a = withBEM("a");

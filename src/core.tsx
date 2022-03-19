@@ -18,7 +18,7 @@ export function withBEM<ComponentT extends React.ElementType>(
   Component: ComponentT
 ) {
   const ComponentWithBEM = React.forwardRef<
-    ComponentT,
+    React.ElementRef<ComponentT>,
     ComponentPropsWithBEM<ComponentT>
   >(({ $block, $element, $modifier, ...props }, ref): React.ReactElement => {
     // retrieve context
