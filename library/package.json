@@ -1,0 +1,42 @@
+{
+  "name": "react-with-bem",
+  "version": "1.0.7",
+  "description": "BEM for React in the form of a higher-order component.",
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teamrevin/react-with-bem.git"
+  },
+  "homepage": "https://github.com/teamrevin/react-with-bem#readme",
+  "bugs": {
+    "url": "https://github.com/teamrevin/react-with-bem/issues"
+  },
+  "author": "Lukas Kupczyk <kontakt@lukas-kupczyk.de>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "hoc",
+    "higher-order-component",
+    "bem",
+    "sass",
+    "scss",
+    "css"
+  ],
+  "devDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "files": [
+    "/dist"
+  ]
+}

@@ -10,7 +10,8 @@
         "rootDir": "src",
 
         /* Emit */
-        "outDir": "build",
+        "outDir": "dist",
+        "declaration": true,
 
         /* Interop Constraints */
         "esModuleInterop": true,

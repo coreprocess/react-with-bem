@@ -1,48 +1,46 @@
 .app {
-  margin-top: 64px;
-  text-align: center;
+    margin-top: 64px;
+    text-align: center;
 
-  &__container {
-    font-family: Arial, Helvetica, sans-serif;
+    &__container {
+        font-family: Arial, Helvetica, sans-serif;
 
-    h1 {
-      margin-bottom: 32px;
-      font-size: 32px;
-      color: #184e77;
+        h1 {
+            margin-bottom: 32px;
+            font-size: 32px;
+            color: #184e77;
+        }
+
+        p {
+            margin-bottom: 32px;
+            color: #1e6091;
+        }
+
+        &__button {
+            margin: 0 8px 32px 8px;
+            padding: 12px 32px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #168aad;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #34a0a4;
+            }
+        }
+
+        &__click {
+            /*! keep */
+
+            &--firstModifier {
+                color: #76c893;
+            }
+
+            &--anotherModifier {
+                font-weight: bold;
+            }
+        }
     }
-
-    p {
-      margin-bottom: 32px;
-      color: #1e6091;
-    }
-
-    &__button {
-      margin: 0 8px 32px 8px;
-      padding: 12px 32px;
-      font-size: 16px;
-      color: #ffffff;
-      background-color: #168aad;
-      border: 0;
-      border-radius: 4px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #34a0a4;
-      }
-    }
-
-    &__click {
-      /*! keep */
-
-      &--firstModifier {
-        color: #76c893;
-      }
-
-      &--anotherModifier {
-        font-weight: bold;
-      }
-    }
-  }
-
-
 }

@@ -1,38 +1,20 @@
 {
-  "name": "@digitalentities/react-hook-bem",
-  "version": "1.0.6",
-  "description": "A react library implementing the BEM concept for Sass",
-  "scripts": {
-    "build": "tsc"
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "repository": "https://github.com/teamrevin/react-hook-bem",
-  "author": "Lukas Kupczyk <kontakt@lukas-kupczyk.de>",
-  "license": "MIT",
-  "keywords": [
-    "react",
-    "sass",
-    "bem",
-    "nextjs",
-    "scss",
-    "css",
-    "bem-methodology",
-    "bem-css",
-    "react-hooks",
-    "hooks"
-  ],
-  "devDependencies": {
-    "typescript": "^4.5.4",
-    "@types/react": "*",
-    "@types/react-dom": "*"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  },
-  "files": [
-    "/dist"
-  ]
+    "private": true,
+    "workspaces": [
+        "library",
+        "example"
+    ],
+    "scripts": {
+        "build": "yarn workspaces foreach --verbose --topological-dev run build"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.49.0",
+        "@typescript-eslint/parser": "^5.49.0",
+        "eslint": "^8.32.0",
+        "eslint-plugin-react": "^7.32.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "prettier": "^2.8.3",
+        "typescript": "^4.9.4"
+    },
+    "packageManager": "yarn@3.3.1"
 }

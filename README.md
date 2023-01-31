@@ -1,23 +1,23 @@
-# react-hook-bem
+# react-with-bem
 
 A React library implementing the [BEM](http://getbem.com/) concept for Sass.
 
 ## Features
 
-- Complete implementation of BEM concept including blocks, elements and modifiers.
-- Provides easy to use style injection
-- Provides easy to use DOM elements prefixed by $
-- Wrapper to integrate your own components
-- Warning in developer console when class is missing
+-   Complete implementation of BEM concept including blocks, elements and modifiers.
+-   Provides easy to use style injection
+-   Provides easy to use DOM elements prefixed by $
+-   Wrapper to integrate your own components
+-   Warning in developer console when class is missing
 
 ## Installation
 
 ```bash
-yarn add @digitalentities/react-hook-bem
+yarn add react-with-bem
 
 #or
 
-npm install @digitalentities/react-hook-bem
+npm install react-with-bem
 ```
 
 ## Basic usage
@@ -27,8 +27,8 @@ npm install @digitalentities/react-hook-bem
 * Component.tsx
 */
 
-// All DOM elements are prefixed by $
-import { $div, $main, Styles } from "@digitalentities/react-hook-bem";
+// All BEM-enabled elements are prefixed by $
+import { $div, $main, Styles } from "react-with-bem";
 
 // import styles as module
 // https://github.com/css-modules/css-modules
@@ -52,7 +52,7 @@ return (
         <$div
             $element="click"
             $modifier={{
-            hidden: clicked,
+              hidden: clicked,
             }}
         >
             Hello world!
@@ -69,19 +69,19 @@ return (
 */
 
 .app {
-  background-color: red;
+    background-color: red;
 
-  &__container {
-    margin: 0 auto;
+    &__container {
+        margin: 0 auto;
 
-    &__click {
-      /*! keep - so scss compiles empty class */
+        &__click {
+            /*! keep - so scss compiles empty class */
 
-      &--hidden {
-        display: none;
-      }
+            &--hidden {
+                display: none;
+            }
+        }
     }
-  }
 }
 ```
 
@@ -91,7 +91,7 @@ You can wrap your own components with the provided `withBEM` wrapper:
 
 ```typescript
 import { YourComponent } from "./YourComponent";
-import { withBEM } from "react-hooks-bem";
+import { withBEM } from "react-with-bem";
 
 export const $YourComponent = withBEM(YourComponent);
 ```
@@ -137,5 +137,5 @@ yarn start
 
 ## Authors
 
-- Niklas Salmoukas - [@coreprocess](https://github.com/coreprocess) - Digital Entities
-- Lukas Kupczyk - [@lukaskupczyk](https://github.com/lukaskupczyk) - Digital Entities
+-   Niklas Salmoukas - [@coreprocess](https://github.com/coreprocess) - Digital Entities
+-   Lukas Kupczyk - [@lukaskupczyk](https://github.com/lukaskupczyk) - Digital Entities
