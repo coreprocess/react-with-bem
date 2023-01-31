@@ -20,7 +20,7 @@ jobs:
             - run: yarn npm publish
               working-directory: library
             # publish in addition to old npm package
-            - run: jq '.name = "@digitalentities/react-hook-bem"' package.json | sponge package.json
+            - run: mv package.json package.json.orig && jq '.name = "@digitalentities/react-hook-bem"' package.json.orig > package.json
               working-directory: library
             - run: yarn npm publish
               working-directory: library
