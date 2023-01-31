@@ -1,5 +1,8 @@
 # withBEM()
 
+![npm version](https://badgen.net/npm/v/react-with-bem?icon=npm&label)
+![GitHub checks](https://badgen.net/github/checks/teamrevin/react-with-bem/publish?icon=github&label=GitHub)
+
 `withBEM()` implements the [BEM](http://getbem.com/) methodology for React in the form of a higher-order component.
 
 ## Features
