@@ -79,7 +79,7 @@ return (
 }
 ```
 
-### Higher-order component
+## Higher-order component
 
 You can wrap your own components with the provided `withBEM` higher-order component:
 
