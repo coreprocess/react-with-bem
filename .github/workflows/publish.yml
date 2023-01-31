@@ -10,17 +10,19 @@ jobs:
         environment: publish
         steps:
             - uses: actions/checkout@v2
+            - name: create copy of library with old package name
+              run: |
+                  cp -r library library_old_package
+                  echo "$(jq '.name = "@digitalentities/react-hook-bem"' library_old_package/package.json)" > library_old_package/package.json
+                  echo "$(jq '.workspaces += ["library_old_package"]' package.json)" > package.json
             - run: yarn
             - run: yarn build
-            - run: cp README.md library
+            - run: echo "library library_old_package" | xargs -n 1 cp README.md
             - run: yarn config set npmAuthToken $NPM_AUTH_TOKEN
               env:
                   NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
             - run: yarn config set npmAlwaysAuth true
             - run: yarn npm publish
               working-directory: library
-            # publish in addition to old npm package
-            - run: mv package.json package.json.orig && jq '.name = "@digitalentities/react-hook-bem"' package.json.orig > package.json
-              working-directory: library
             - run: yarn npm publish
-              working-directory: library
+              working-directory: library_old_package
