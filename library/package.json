@@ -1,6 +1,6 @@
 {
   "name": "react-with-bem",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "BEM for React in the form of a higher-order component.",
   "scripts": {
     "build": "tsc"
@@ -16,7 +16,10 @@
   "bugs": {
     "url": "https://github.com/teamrevin/react-with-bem/issues"
   },
-  "author": "Lukas Kupczyk <kontakt@lukas-kupczyk.de>",
+  "contributors": [
+    "Niklas Salmoukas",
+    "Lukas Kupczyk"
+  ],
   "license": "MIT",
   "keywords": [
     "react",

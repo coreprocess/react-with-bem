@@ -1,51 +1,46 @@
-# react-with-bem
+# withBEM()
 
-A React library implementing the [BEM](http://getbem.com/) concept for Sass.
+`withBEM()` implements the [BEM](http://getbem.com/) methodology for React in the form of a higher-order component.
 
 ## Features
 
--   Complete implementation of BEM concept including blocks, elements and modifiers.
--   Provides easy to use style injection
--   Provides easy to use DOM elements prefixed by $
--   Wrapper to integrate your own components
--   Warning in developer console when class is missing
+-   Complete implementation of BEM methodology, including blocks, elements, and modifiers
+-   All intrinsic elements prefixed with $
+-   Higher-order component to BEM-enable your own components
+-   Warning in the developer console when CSS class is missing
 
 ## Installation
 
-```bash
+Use your favourite manager to install the [package](https://www.npmjs.com/package/react-with-bem):
+
+```sh
 yarn add react-with-bem
-
-#or
-
-npm install react-with-bem
 ```
 
-## Basic usage
+```sh
+npm install react-with-bem --save
+```
+
+## BEM-enabled intrinsic elements
 
 ```typescript
-/*
-* Component.tsx
-*/
-
-// All BEM-enabled elements are prefixed by $
+// BEM-enabled intrinsic elements are prefixed with $
 import { $div, $main, Styles } from "react-with-bem";
 
-// import styles as module
-// https://github.com/css-modules/css-modules
+// import styles as module (https://github.com/css-modules/css-modules)
 import styles from "./App.module.scss";
 
-// ...
-
+// render
 return (
   // inject styles
   <Styles value={styles}>
-    // define a BEM block by using $block
+    // set BEM block by using $block
     // output: <main class="app">
     <$main $block="app">
-      // define a BEM element by using $element
+      // set a BEM element by using $element
       // output: <div class="app__container">
       <$div $element="container">
-        // use a BEM modifier by using $modifier, multiple modifiers are possible
+        // set BEM modifier by using $modifier (multiple modifiers are possible)
         // output:
         // <div class="app__container__click> when  clicked === false
         // <div class="app__container__click app__container__click--hidden"> when clicked === true
@@ -64,10 +59,6 @@ return (
 ```
 
 ```css
-/*
-* App.module.scss
-*/
-
 .app {
     background-color: red;
 
@@ -85,9 +76,9 @@ return (
 }
 ```
 
-### Advanced usage
+### Higher-order component
 
-You can wrap your own components with the provided `withBEM` wrapper:
+You can wrap your own components with the provided `withBEM` higher-order component:
 
 ```typescript
 import { YourComponent } from "./YourComponent";
@@ -98,44 +89,4 @@ export const $YourComponent = withBEM(YourComponent);
 
 ## Example
 
-You can find a complete example in `./example`.
-
-## Development
-
-```bash
-# Step 1:
-# in project root
-yarn install
-
-# Step 2:
-# in project root
-cd example
-
-yarn install
-
-# Step 3:
-# in project root
-# See: https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react
-cd example/node_modules/react
-
-yarn link
-
-# in project root
-yarn link "react"
-
-# Step 4
-# Build library
-# in project root
-yarn build
-
-# Step 5
-# Start example app
-cd example
-
-yarn start
-```
-
-## Authors
-
--   Niklas Salmoukas - [@coreprocess](https://github.com/coreprocess) - Digital Entities
--   Lukas Kupczyk - [@lukaskupczyk](https://github.com/lukaskupczyk) - Digital Entities
+You can find a complete example [here](example).
