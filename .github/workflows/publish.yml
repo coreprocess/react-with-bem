@@ -24,5 +24,6 @@ jobs:
             - run: yarn config set npmAlwaysAuth true
             - run: yarn npm publish
               working-directory: library
+            - run: sleep 20s
             - run: yarn npm publish
               working-directory: library_old_package
