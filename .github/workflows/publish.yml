@@ -15,7 +15,7 @@ jobs:
                   cp -r library library_old_package
                   echo "$(jq '.name = "@digitalentities/react-hook-bem"' library_old_package/package.json)" > library_old_package/package.json
                   echo "$(jq '.workspaces += ["library_old_package"]' package.json)" > package.json
-            - run: yarn
+            - run: YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn
             - run: yarn build
             - run: echo "library library_old_package" | xargs -n 1 cp README.md
             - run: yarn config set npmAuthToken $NPM_AUTH_TOKEN
