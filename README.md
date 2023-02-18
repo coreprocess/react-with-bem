@@ -19,52 +19,81 @@ npm install react-with-bem --save
 
 ## Usage
 
-```typescript
+```tsx
+import React from "react";
 import { BEM } from "react-with-bem";
 
-// import styles as module (https://github.com/css-modules/css-modules)
+// import styles as module
+// https://github.com/css-modules/css-modules
 import styles from "./App.module.scss";
 
-// render
-return (
-  // activate BEM and inject styles
-  <BEM styles={styles}>
-    // set BEM block by using $block
-    // output: <main class="app">
-    <main $block="app">
-      // set a BEM element by using $element
-      // output: <div class="app__container">
-      <div $element="container">
-        // set BEM modifier by using $modifier (multiple modifiers are possible)
-        // output:
-        // <div class="app__container__click> when  clicked === false
-        // <div class="app__container__click app__container__click--hidden"> when clicked === true
-        <div
-            $element="click"
-            $modifier={{
-              hidden: clicked,
-            }}
-        >
-            Hello world!
-        </div>
-      </div>
-    </main>
-  </BEM>
-);
+// use BEM annotations whenever applicable
+export function App() {
+    return (
+        // activate BEM and inject styles
+        <BEM styles={styles}>
+            {
+                // set BEM block by using $block
+                // output: <main class="app">
+            }
+            <main $block="app">
+                {
+                    // set a BEM element by using $element
+                    // output: <div class="app__container">
+                }
+                <div $element="container">
+                    {
+                        // set BEM modifier by using $modifier (multiple modifiers are possible)
+                        // output:
+                        //     <div class="app__container__hello> when emphasized === false
+                        //     <div class="app__container__hello app__container__hello--emphasized"> when emphasized === true
+                    }
+                    <div
+                        $element="hello"
+                        $modifier={{
+                            emphasized: true,
+                        }}
+                    >
+                        Hello World!
+                    </div>
+                </div>
+            </main>
+        </BEM>
+    );
+}
 ```
 
-```css
+```scss
 .app {
     background-color: red;
+    color: white;
 
     &__container {
+        max-width: fit-content;
         margin: 0 auto;
 
-        &__click {
-            &--hidden {
-                display: none;
+        &__hello {
+            font-size: 2rem;
+
+            &--emphasized {
+                font-weight: bold;
             }
         }
+    }
+}
+```
+
+## ESLint
+
+Please add the following rule to your ESLint configuration to suppress errors related to the `$block`, `$element`, and `$modifier` attributes.
+
+```json
+{
+    "rules": {
+        "react/no-unknown-property": [
+            2,
+            { "ignore": ["$block", "$element", "$modifier"] }
+        ]
     }
 }
 ```
