@@ -1,7 +1,7 @@
 {
   "name": "react-with-bem",
-  "version": "2.0.0",
-  "description": "BEM for React in the form of a higher-order component.",
+  "version": "2.0.1",
+  "description": "BEM for React",
   "scripts": {
     "build": "tsc"
   },
@@ -23,8 +23,6 @@
   "license": "MIT",
   "keywords": [
     "react",
-    "hoc",
-    "higher-order-component",
     "bem",
     "sass",
     "scss",

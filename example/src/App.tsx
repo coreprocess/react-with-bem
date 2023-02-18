@@ -38,7 +38,7 @@ export function App() {
         <BEM styles={styles}>
             <div $block="app">
                 <div $element="container">
-                    <h1>withBEM Example App</h1>
+                    <h1>BEM Example App</h1>
 
                     <button $element="button" onClick={onClickAction}>
                         Click here to apply a modifier to element below
