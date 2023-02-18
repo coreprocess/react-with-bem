@@ -1,6 +1,6 @@
 {
   "name": "react-with-bem",
-  "version": "1.0.19",
+  "version": "2.0.0",
   "description": "BEM for React in the form of a higher-order component.",
   "scripts": {
     "build": "tsc"
