@@ -1,6 +1,6 @@
 {
   "name": "react-with-bem",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "BEM for React",
   "scripts": {
     "build": "tsc"
